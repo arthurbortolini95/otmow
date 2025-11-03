@@ -1,0 +1,15 @@
+{
+  "name": "otmow",
+  "version": "1.0.0",
+  "description": "python3 salary/transparency_scraper_modular.py \"AARAN ESTEVAO LIMA BARBOSA\"",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "playwright": "^1.56.1"
+  }
+}

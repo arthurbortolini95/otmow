@@ -1,0 +1,18 @@
+1. visit this link: https://transparencia.e-publica.net/epublica-portal/#/palmeira/portal/compras/contratoTable
+2. look for table element with id #compublicaportalcontratoPortalContratoTableService
+3. inside of above table, there will be a tbody element
+4. inside of above tbody, there will be several <tr> elements with selector #compublicaportalcontratoPortalContratoTableService > tbody > tr:nth-child(n) and attribute ng-repeat-start="(rowIndex, row) in tableReq.rows", which in its turn will contain several <td> elements
+5. find all tr elements and save into a tableRows array
+6. for each tr element from the array
+    6.1 grab the value of its before last <td> child. selector: #compublicaportalcontratoPortalContratoTableService > tbody > tr:nth-child(n) > td.epublica-table-row.text-right
+    6.2 put above value in an object called result with key='contract_value''
+    6.3 click on the td element to get navigated to a new page
+    6.4 in this new page, find a <dt> element which text value is "Finalidade": selector = #formly_6_list_7_7 > dl > ng-repeat:nth-child(2) > dt
+    6.5 grab text content value of dd element, which is a sibling of above <dt> element: selector: #formly_6_list_7_7 > dl > ng-repeat:nth-child(2) > dd
+    6.6 put text content grabbed above inside result object under the key='purpose'
+    6.7 put result object inside of resultList array
+    6.8 navigate back
+    6.9 if there are still tr elements, repeat steps from 6.1
+    6.10 if no tr elements are left, look for link with selector #page-top > div:nth-child(1) > div > portal-shell > section > div > div.row > div > div > div > div.content-select-pagination.ng-untouched.ng-valid.ng-not-empty.ng-dirty.ng-valid-parse > div.pagination > a.btn.btn-blue.pagination-next
+    6.11 if above link does not have disabled attribute which equals disabled, click on it and repeat from step 5
+    6.12 if above link has disabled attribute which equals disabled, finish task
