@@ -4,6 +4,7 @@
   "description": "python3 salary/transparency_scraper_modular.py \"AARAN ESTEVAO LIMA BARBOSA\"",
   "main": "index.js",
   "scripts": {
+    "scrap": "node contracts/scraper.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
